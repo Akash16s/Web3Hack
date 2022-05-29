@@ -11,7 +11,7 @@ function App() {
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<Dao />} />{" "}
-          <Route path="/dashboard" element={<Dashboard />} />{" "}
+          <Route path="/dashboard/:id" element={<Dashboard />} />{" "}
           <Route path="/onboard" element={<OnBoarding />} />{" "}
           <Route path="/settings/:id" element={<Settings />} />
           <Route path="*" element={<Dao />} />
