@@ -30,13 +30,13 @@ function Settings() {
   const [docId, setDocId] = useState("");
   const [userList, setUserList] = useState([]);
 
-  const [gitCodeCotri, setGitCodeContri] = useState(10);
-  const [snapshot, setSnapshots] = useState(10);
-  const [Twitter, setTwitter] = useState(10);
-  const [EarlyAdoption, setEarlyAdoption] = useState(10);
-  const [ActiveUser, setActiveUser] = useState(10);
-  const [TokenLoyalty, setTokenLoyalty] = useState(10);
-  const [LPSupplier, setLPSupplier] = useState(10);
+  const [gitCodeCotri, setGitCodeContri] = useState(0);
+  const [snapshot, setSnapshots] = useState(0);
+  const [Twitter, setTwitter] = useState(0);
+  const [EarlyAdoption, setEarlyAdoption] = useState(0);
+  const [ActiveUser, setActiveUser] = useState(0);
+  const [TokenLoyalty, setTokenLoyalty] = useState(0);
+  const [LPSupplier, setLPSupplier] = useState(0);
 
   const getTheDao = async () => {
     const q = query(collection(db, "Dao"), where("daoName", "==", id));
@@ -219,11 +219,12 @@ function Settings() {
         >
           Dashboard
         </Typography>
-        <Typography
-          variant="h5"
-          style={{ width: "20rem", marginBottom: "1rem" }}
-        >
-          Dao: <b>{nameOfDao}</b>
+        <Typography variant="h6" style={{ width: "100", marginBottom: "1rem" }}>
+          Dao: <b>{nameOfDao}</b> <br />
+          Formula: 10 * {gitCodeCotri || "X1"} + 10 * {snapshot || "X2"} + 10 *{" "}
+          {Twitter || "X3"} + 10 * {EarlyAdoption || "X4"} + 10 *{" "}
+          {ActiveUser || "X5"} + 10 * {TokenLoyalty || "X6"} + 10 *{" "}
+          {LPSupplier || "X7"}
         </Typography>
         <TableContainer component={Paper}>
           <Table sx={{ minWidth: 650 }} aria-label="simple table">
@@ -233,10 +234,14 @@ function Settings() {
                 <TableCell>Git Code Contribution</TableCell>
                 <TableCell align="right">Snapshot Voting</TableCell>
                 <TableCell align="right">Twitter Activity</TableCell>
+                <TableCell align="right">Discord Activity</TableCell>
                 <TableCell align="right">Early Adoption</TableCell>
                 <TableCell align="right">Active User</TableCell>{" "}
                 <TableCell align="right">Token Loyalty</TableCell>
-                <TableCell align="right">LP Supplies</TableCell>
+                <TableCell align="right">LP Supplies</TableCell>{" "}
+                <TableCell style={{ background: "grey" }} align="right">
+                  Total Amount
+                </TableCell>
               </TableRow>
             </TableHead>
             <TableBody>
@@ -252,9 +257,13 @@ function Settings() {
                   <TableCell align="right">0</TableCell>
                   <TableCell align="right">0</TableCell>
                   <TableCell align="right">0</TableCell>
+                  <TableCell align="right">0</TableCell>{" "}
                   <TableCell align="right">0</TableCell>
                   <TableCell align="right">0</TableCell>
-                  <TableCell align="right">0</TableCell>
+                  <TableCell align="right">0</TableCell>{" "}
+                  <TableCell style={{ background: "lightgrey" }} align="right">
+                    0
+                  </TableCell>
                 </TableRow>
               ))}
             </TableBody>

@@ -20,6 +20,8 @@ function OnBoarding() {
   const [github, setGithub] = useState("");
   const [twitter, setTwitter] = useState("");
   const [Discord, setDiscord] = useState("");
+  const [email, setEmail] = useState("");
+
   const [isSubmitted, setIsSubmitted] = useState(false);
 
   const fetchDao = async () => {
@@ -41,6 +43,7 @@ function OnBoarding() {
       github,
       twitter,
       Discord,
+      email,
     });
     setIsSubmitted(true);
   };
@@ -122,6 +125,16 @@ function OnBoarding() {
         style={{ width: "20rem", marginLeft: "5rem" }}
         onChange={(event) => {
           setDiscord(event.target.value);
+        }}
+      />{" "}
+      <TextField
+        id="filled-basic"
+        label="Email"
+        variant="filled"
+        size="small"
+        style={{ width: "20rem", marginLeft: "5rem" }}
+        onChange={(event) => {
+          setEmail(event.target.value);
         }}
       />{" "}
       <Button
