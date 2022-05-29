@@ -17,7 +17,10 @@ export default function Dashboard() {
   return (
     <Stack spacing={2} direction="column">
       {" "}
-      <Typography variant="h3" style={{ width: "20rem", marginBottom: "1rem" }}>
+      <Typography
+        variant="h3"
+        style={{ width: "20rem", marginBottom: "1rem", marginLeft: "5rem" }}
+      >
         Dashboard
       </Typography>
       <Typography variant="h5" style={{ width: "20rem", marginBottom: "1rem" }}>

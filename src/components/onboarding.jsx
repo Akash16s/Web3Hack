@@ -59,10 +59,16 @@ function OnBoarding() {
 
   return (
     <Stack spacing={2} direction="column">
-      <Typography style={{ width: "20rem", marginBottom: "1rem" }} variant="h3">
+      <Typography
+        style={{ width: "20rem", marginBottom: "1rem", marginLeft: "5rem" }}
+        variant="h3"
+      >
         Welcome!!
       </Typography>{" "}
-      <Typography style={{ width: "20rem", marginBottom: "1rem" }} variant="h5">
+      <Typography
+        style={{ width: "20rem", marginBottom: "1rem", marginLeft: "5rem" }}
+        variant="h5"
+      >
         Kindly Select the following
       </Typography>
       <FormControl style={{ width: "20rem", marginBottom: "1rem" }}>

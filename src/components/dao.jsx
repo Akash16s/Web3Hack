@@ -9,6 +9,8 @@ export default function Dao() {
   const [github, setGithub] = useState("");
   const [snapshot, setSnapshot] = useState("");
   const [twitter, setTwitter] = useState("");
+  const [chainId, setChainId] = useState("");
+
   const [isSubmitted, setIsSubmitted] = useState(false);
 
   const submit = async (event) => {
@@ -20,13 +22,17 @@ export default function Dao() {
       github,
       twitter,
       snapshot,
+      chainId,
     });
     setIsSubmitted(true);
   };
 
   return (
     <Stack spacing={2} direction="column">
-      <Typography variant="h3" style={{ width: "20rem", marginBottom: "1rem" }}>
+      <Typography
+        variant="h3"
+        style={{ width: "20rem", marginBottom: "1rem", marginLeft: "5rem" }}
+      >
         Dao Entry
       </Typography>
       <Stack spacing={2} direction="column">
@@ -78,6 +84,16 @@ export default function Dao() {
           style={{ width: "20rem", marginLeft: "5rem" }}
           onChange={(event) => {
             setSnapshot(event.target.value);
+          }}
+        />{" "}
+        <TextField
+          id="filled-basic"
+          label="Chain Id"
+          variant="filled"
+          size="small"
+          style={{ width: "20rem", marginLeft: "5rem" }}
+          onChange={(event) => {
+            setChainId(event.target.value);
           }}
         />{" "}
         <Button
