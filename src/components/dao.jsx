@@ -9,6 +9,7 @@ export default function Dao() {
   const [github, setGithub] = useState("");
   const [snapshot, setSnapshot] = useState("");
   const [twitter, setTwitter] = useState("");
+  const [isSubmitted, setIsSubmitted] = useState(false);
 
   const submit = async (event) => {
     event.preventDefault();
@@ -20,6 +21,7 @@ export default function Dao() {
       twitter,
       snapshot,
     });
+    setIsSubmitted(true);
   };
 
   return (
@@ -85,6 +87,11 @@ export default function Dao() {
         >
           Submit
         </Button>
+        {isSubmitted ? (
+          <p style={{ color: "red", width: "10rem", marginLeft: "10rem" }}>
+            Submission Complete
+          </p>
+        ) : null}
       </Stack>
     </Stack>
   );
